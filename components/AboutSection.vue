@@ -27,7 +27,7 @@ const listItems = [
 </script>
 
 <template>
-  <even-columns>
+  <even-columns class="padding-block-900">
     <div>
       <h2 class="fs-secondary-heading fw-bold">
         What's different about Manage?

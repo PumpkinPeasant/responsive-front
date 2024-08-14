@@ -33,7 +33,7 @@ const navItems = [
       <a href="#">
         <img :src="Logo" alt="Manage">
       </a>
-      <nav>
+      <nav aria-label="Primary">
         <ul role="list">
           <li v-for="(item, index) in navItems" :key="index">
             <a :href="item.href">{{ item.title }}</a>
