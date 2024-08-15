@@ -28,7 +28,7 @@ const listItems = [
 
 <template>
   <even-columns class="padding-block-900">
-    <div>
+    <div class="flow">
       <h2 class="fs-secondary-heading fw-bold">
         What's different about Manage?
       </h2>
@@ -37,11 +37,13 @@ const listItems = [
         software is tailor-made for modern digital
         product teams.</p>
     </div>
-    <div>
+    <div class="flow">
       <ul role="list">
         <li v-for="(item, index) in listItems" :key="index">
-          <h3 class="fs-600 fw-bold">{{ item.title }}</h3>
-          <p>{{ item.text }}</p>
+          <div class="flow" style="--flow-spacer: 1em">
+            <h3 class="fs-600 fw-bold">{{ item.title }}</h3>
+            <p data-width="wide">{{ item.text }}</p>
+          </div>
         </li>
       </ul>
     </div>
