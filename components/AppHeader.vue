@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Logo from '~/assets/images/logo.svg'
+import Logo from 'assets/images/icons/logo.svg'
 import MenuOpen from '~/assets/images/icon-close.svg'
 import MenuClose from '~/assets/images/icon-hamburger.svg'
 import AButton from "~/components/UI/AButton.vue";
@@ -42,7 +42,7 @@ let toggle = () => {
     <div class="container">
       <div class="nav-wrapper">
         <a href="#">
-          <img :src="Logo" alt="Manage">
+          <logo style="width: 10rem" :fontControlled="false" filled/>
         </a>
         <button @click="toggle" class="mobile-nav-toggle" aria-controls="primary-navigation"
                 :aria-expanded="toggleMenu">

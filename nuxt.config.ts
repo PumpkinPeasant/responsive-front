@@ -3,6 +3,7 @@ export default defineNuxtConfig({
     compatibilityDate: '2024-04-03',
     devtools: {enabled: true},
     css: ["@/assets/main.css"],
+
     app: {
         head: {
             title: "Landing Page",
@@ -18,5 +19,10 @@ export default defineNuxtConfig({
                 {rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: ''},
             ],
         },
+    },
+
+    modules: ["nuxt-svgo"],
+    svgo: {
+        autoImportPath: './assets/icons/',
     },
 })

@@ -2,6 +2,7 @@
 import AButton from "~/components/UI/AButton.vue";
 import ChartImg from '~/assets/images/illustration-intro.svg'
 import EvenColumns from "~/components/UI/containers/EvenColumns.vue";
+import Logo from "assets/images/icons/logo.svg";
 </script>
 
 <template>
@@ -13,7 +14,7 @@ import EvenColumns from "~/components/UI/containers/EvenColumns.vue";
       <a-button/>
     </div>
     <div>
-      <img :src="ChartImg" alt="">
+      <chart-img :fontControlled="false" filled/>
     </div>
   </even-columns>
 </template>

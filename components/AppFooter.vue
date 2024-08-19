@@ -1,11 +1,11 @@
 <script setup lang="ts">
 
-import Logo from "assets/images/logo.svg";
-import Facebook from "assets/images/icon-facebook.svg";
-import Youtube from "assets/images/icon-youtube.svg";
-import Twitter from "assets/images/icon-twitter.svg";
-import Pinterest from "assets/images/icon-pinterest.svg";
-import Instagram from "assets/images/icon-instagram.svg";
+import Logo from "assets/images/icons/logo.svg";
+import Facebook from "assets/images/icons/icon-facebook.svg";
+import Youtube from "assets/images/icons/icon-youtube.svg";
+import Twitter from "assets/images/icons/icon-twitter.svg";
+import Pinterest from "assets/images/icons/icon-pinterest.svg";
+import Instagram from "assets/images/icons/icon-instagram.svg";
 import AButton from "~/components/UI/AButton.vue";
 
 const links = [
@@ -75,19 +75,21 @@ const navItems = [
       <div class="even-columns">
         <div>
           <a href="#">
-            <img :src="Logo" alt="Manage">
+            <logo style="width: 10rem" :fontControlled="false" filled/>
           </a>
-          <ul role="list" aria-label="Social links">
+          <ul class="social-media" role="list" aria-label="Social links">
             <li v-for="(link, index) in links" :key="index">
-              <a :aria-label="link.label" :href="link.href">{{link.icon}}</a>
+              <a :aria-label="link.label" :href="link.href">
+                <component :is="link.icon"/>
+              </a>
             </li>
           </ul>
         </div>
-        <div>
+        <div class="footer-nav">
           <nav aria-label="Footer">
             <ul role="list">
               <li v-for="(item, index) in navItems" :key="index">
-                <a :href="item.href">{{ item.title }}</a>
+                <a class="text-neutral-100" :href="item.href">{{ item.title }}</a>
               </li>
             </ul>
           </nav>
@@ -105,5 +107,26 @@ const navItems = [
 </template>
 
 <style scoped>
+.social-media {
+  display: flex;
+  gap: var(--size-300);
+}
 
+a:hover, a:focus {
+  color: var(--clr-accent-400);
+}
+
+.footer-nav {
+  columns: 2;
+}
+
+a svg{
+  font-size: var(--size-500);
+}
+
+@media (min-width: 50em) /* 800px */ {
+  a svg{
+    font-size: var(--size-400);
+  }
+}
 </style>
