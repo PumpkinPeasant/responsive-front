@@ -74,8 +74,8 @@ const navItems = [
     <div class="container">
       <div class="even-columns">
         <div>
-          <a href="#">
-            <logo style="width: 10rem" :fontControlled="false" filled/>
+          <a href="#" aria-label="home">
+            <logo style="width: 10rem; --logo-color: var(--clr-neutral-100)" :fontControlled="false" filled/>
           </a>
           <ul class="social-media" role="list" aria-label="Social links">
             <li v-for="(link, index) in links" :key="index">
@@ -109,7 +109,7 @@ const navItems = [
 <style scoped>
 .social-media {
   display: flex;
-  gap: var(--size-300);
+  gap: var(--size-600);
 }
 
 a:hover, a:focus {
@@ -120,12 +120,16 @@ a:hover, a:focus {
   columns: 2;
 }
 
-a svg{
+a svg {
   font-size: var(--size-500);
 }
 
 @media (min-width: 50em) /* 800px */ {
-  a svg{
+  .social-media {
+    gap: var(--size-300);
+  }
+
+  a svg {
     font-size: var(--size-400);
   }
 }

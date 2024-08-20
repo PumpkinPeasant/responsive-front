@@ -46,7 +46,7 @@ let toggle = () => {
         </a>
         <button @click="toggle" class="mobile-nav-toggle" aria-controls="primary-navigation"
                 :aria-expanded="toggleMenu">
-          <img :src="toggleMenu ? MenuOpen : MenuClose" alt="" aria-hidden="true">
+          <component :is="toggleMenu ? MenuOpen : MenuClose" aria-hidden="true" :fontControlled="false" filled/>
           <span class="visually-hidden">Menu</span>
         </button>
         <nav aria-label="Primary"
@@ -70,6 +70,7 @@ let toggle = () => {
   top: var(--size-700);
   position: sticky;
   margin-bottom: var(--size-700);
+  z-index: 3;
 }
 
 .nav-wrapper {
@@ -104,6 +105,7 @@ let toggle = () => {
   .overlay[data-overlay=true] {
     position: fixed;
     inset: 0;
+    z-index: 2;
     background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
   }
 
